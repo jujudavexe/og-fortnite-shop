@@ -1,12 +1,10 @@
-import './App.css'
+import Shop from "./pages/shop/shop.tsx";
 
 function App() {
-  return (
-    <>
-      <div>
-      </div>
-    </>
-  )
+  return <>
+    <Shop></Shop>
+  </>
 }
 
 export default App
+

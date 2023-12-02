@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.background-container {
+    background-image: url("../../assets/images/shop-background.png");
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    position: absolute;
+}
+
+.items {
+    list-style: none;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    position: relative;
+    top: 50%;
+}
+
+.item-box {
+    width: 30vw;
+    height: 20vh;
+    background: gold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

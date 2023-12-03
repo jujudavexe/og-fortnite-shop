@@ -17,19 +17,22 @@ div.background-container {
 .items {
     list-style: none;
     color: white;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    justify-content: center;
     align-self: center;
     position: relative;
-    top: 50%;
+    top: 25%;
+    gap: 1.5vw;
 }
 
 .item-box {
-    width: 30vw;
-    height: 20vh;
+    width: 20vw;
+    height: 56vh;
     background: gold;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: solid;
 }

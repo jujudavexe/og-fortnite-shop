@@ -22,13 +22,14 @@ div.background-container {
     justify-content: center;
     align-self: center;
     position: relative;
+    vertical-align: middle;
     top: 25%;
     gap: 1.5vw;
 }
 
 .item-box {
     width: 20vw;
-    height: 56vh;
+    aspect-ratio: 10 / 15;
     background: gold;
     text-align: center;
     display: flex;

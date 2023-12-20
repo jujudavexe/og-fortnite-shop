@@ -19,7 +19,7 @@ function ShopContent({ items, hidden }: { items: string[], hidden: boolean }) {
     return (
         <ul className={'items'}>
             {items.map((item: string, index: number) => (
-                <li className={'item-box'} style={{ borderColor: colors[index] }}>{item}</li>
+                <li className={'item-box ' + (index <= 1 ? 'featured' : 'daily')} style={{ borderColor: colors[index] }}>{item}</li>
             ))}
         </ul>
     );

@@ -19,8 +19,6 @@ div.background-container {
 
 
 .item-box {
-    width: 20vw;
-    aspect-ratio: 10 / 7.5;
     background: gold;
     text-align: center;
     display: flex;
@@ -33,21 +31,22 @@ div.background-container {
     list-style: none;
     color: white;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr)  repeat(2, 14.2vw);
     grid-template-rows: repeat(2, 1fr);
     justify-content: center;
     position: relative;
-    gap: 1.5vw;
+    gap: 1vw;
 }
 
 .featured {
-    grid-column: span 2;
-    aspect-ratio: 10 / 15;
+    width: 19vw;
+    grid-row: span 2;
+    aspect-ratio: 10 / 15.6;
     background-color: aquamarine;
 }
 
 .daily {
-    grid-column: span 2;
-    aspect-ratio: 10 / 7.5;
+    width: 14.2vw;
+    aspect-ratio: 1;
 }
 

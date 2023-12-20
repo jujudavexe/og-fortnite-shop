@@ -3,8 +3,8 @@ import './shop.css'
 //const items:string[] = ['Soldat au crâne', 'Faucheuse', 'baguette étoilée', 'Cristal', 'éclaireuse galaxy', 'Aile articulée', 'Terreur sombre', 'Voleur de coeur']
 import './shop.css';
 
-const items: string[] = ['Soldat au crâne', 'Faucheuse', 'baguette étoilée', 'Cristal'];
-const colors: string[] = ['red', 'blue', 'green', 'purple'];
+const items: string[] = ['Soldat au crâne', 'Faucheuse', 'baguette étoilée', 'Cristal', '', ''];
+const colors: string[] = ['red', 'blue', 'green', 'purple', 'orange', 'black'];
 
 function Shop() {
     return <div className={'background-container'}>

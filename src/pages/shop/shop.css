@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'fortnite-font';
+    src: url('../../assets/fonts/fortnite-font.woff2') format('woff2');
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -19,13 +25,15 @@ div.background-container {
 
 
 .item-box {
-    background: gold;
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     border: solid;
+    background: gold center no-repeat;
+    background-size: cover;
 }
+
 
 .items {
     list-style: none;
@@ -42,7 +50,6 @@ div.background-container {
     width: 19vw;
     grid-row: span 2;
     aspect-ratio: 10 / 15.6;
-    background-color: aquamarine;
 }
 
 .daily {
@@ -50,3 +57,38 @@ div.background-container {
     aspect-ratio: 1;
 }
 
+.item-info {
+    font-size: 1.8vw;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(5px);
+    padding-top: 3%;
+}
+
+
+.item-name {
+    font-family: 'fortnite-font', 'Roboto', sans-serif;
+}
+
+.item-price {
+    background-color: #010520;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.daily .item-info {
+    font-size: 1.4vw;
+}
+
+.item-type {
+    font-size: 1vw;
+    padding-bottom: 2%;
+}

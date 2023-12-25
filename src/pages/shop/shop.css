@@ -30,7 +30,7 @@ div.background-container {
     justify-content: center;
     align-items: end;
     border: solid;
-    background: gold center no-repeat;
+    background: center no-repeat;
     background-size: cover;
 }
 
@@ -82,6 +82,7 @@ div.background-container {
     align-items: center;
     padding-top: 3%;
     padding-bottom: 3%;
+    gap: 2%;
 }
 
 .daily .item-info {

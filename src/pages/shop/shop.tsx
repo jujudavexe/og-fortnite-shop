@@ -1,24 +1,29 @@
 import './shop.css';
 import { Item } from '../../server/itemlogic/item.ts';
-import {useState} from "react";
+import { useState, useEffect } from "react";
+import { getFeaturedItem, getDailyItem } from '../../server/itemlogic/item-researcher.ts'
 
 // @ts-ignore
 import VbucksIcon from '../../assets/images/icon-vbucks.png';
 
-// @ts-ignore
-import Skin from '../../assets/images/skin.png';
-
-const itemList: Item[] = [
-    new Item('Soldat au crâne', '1,000', 'red', 'Skin'),
-    new Item('Faucheuse', '1,000', 'blue', 'Skin'),
-    new Item('Baguette étoilée', '1,000', 'green', 'Pioche'),
-    new Item('Cristal', '1,000', 'purple', 'Skin'),
-    new Item('Ghoul', '1,000', 'orange', 'Skin'),
-    new Item('Flows', '1,000', 'black', 'Danse')
-];
-
 function Shop() {
-    const [items] = useState(itemList);
+    const [items, setItems] = useState<Item[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const featuredItems = await getFeaturedItem(2);
+                const dailyItems = await getDailyItem(4);
+
+                const itemList = [...featuredItems, ...dailyItems];
+                setItems(itemList);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <div className={'background-container'}>
@@ -36,7 +41,7 @@ function ShopContent({ items, hidden }: { items: Item[], hidden: boolean }) {
             {items.map((item: Item, index: number) => (
                 <li
                     className={'item-box ' + (index <= 1 ? 'featured' : 'daily')}
-                    style={{ backgroundImage: `url(${Skin})`, borderColor: item.rarity }}
+                    style={{ backgroundImage: `url(${item.image}), url(${item.background})`, borderColor: item.border }}
                     key={index}
                 >
                     <div className={'item-info'}>

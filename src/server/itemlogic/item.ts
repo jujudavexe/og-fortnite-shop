@@ -1,13 +1,22 @@
+import { rarityStyles } from "./rarity-color.ts";
+
 export class Item {
     private readonly _name: string;
     private readonly _price: string;
-    private readonly _rarity: string;
+    private readonly _background: string;
+    private readonly _border: string;
     private readonly _type: string;
-    constructor(name: string, price: string, rarity: string, type: string) {
+    private readonly _image: string;
+
+    constructor(name: string, price: string, rarity: string, type: string, image: string) {
         this._name = name;
         this._price = price;
-        this._rarity = rarity;
+        // @ts-ignore
+        this._background = rarityStyles[rarity].backgroundColor;
+        // @ts-ignore
+        this._border = rarityStyles[rarity].borderColor;
         this._type = type;
+        this._image = image;
     }
 
     get name(): string {
@@ -18,11 +27,20 @@ export class Item {
         return this._price;
     }
 
-    get rarity(): string {
-        return this._rarity;
-    }
-
     get type(): string {
         return this._type;
+    }
+
+    get image(): string {
+        return this._image;
+    }
+
+
+    get background(): string {
+        return this._background;
+    }
+
+    get border(): string {
+        return this._border;
     }
 }

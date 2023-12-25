@@ -29,7 +29,7 @@ export async function getFeaturedItem(quantity: number): Promise<Item[]> {
         let index: number;
         do {
             index = Math.floor(Math.random() * data.length--)
-        } while (data[index].type.id !== 'outfit' || data[index].price <= 0)
+        } while (data[index].type.id !== 'outfit' || data[index].price <= 0 || !['Legendary', 'Epic'].includes(data[index].rarity.id))
         items.push(new Item(
             data[index].name,
             data[index].price,

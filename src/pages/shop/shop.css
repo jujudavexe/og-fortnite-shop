@@ -58,7 +58,7 @@ div.background-container {
 }
 
 .item-info {
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     font-family: 'Roboto', sans-serif;
     width: 100%;
     display: flex;
@@ -80,16 +80,20 @@ div.background-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     gap: 2%;
 }
 
 .daily .item-info {
-    font-size: 1.4vw;
+    font-size: 1.3vw;
 }
 
 .item-type {
     font-size: 1vw;
     padding-bottom: 2%;
+}
+
+.item-box:hover {
+    outline: #ffea00 solid 0.25vw;
 }

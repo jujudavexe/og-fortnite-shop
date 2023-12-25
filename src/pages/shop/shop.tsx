@@ -38,25 +38,26 @@ function ShopContent({ items, hidden }: { items: Item[], hidden: boolean }) {
     }
     return (
         <ul className={'items'}>
-            {items.map((item: Item, index: number) => (
-                <li
-                    className={'item-box ' + (index <= 1 ? 'featured' : 'daily')}
-                    style={{ backgroundImage: `url(${item.image}), url(${item.background})`, borderColor: item.border }}
+            {items.map((item, index) => (
+                <a
+                    className={`item-box ${index <= 1 ? 'featured' : 'daily'}`}
+                    style={{
+                        backgroundImage: `url(${item.image}), url(${item.background})`,
+                        borderColor: item.border,
+                        cursor: 'pointer',
+                    }}
                     key={index}
+
                 >
                     <div className={'item-info'}>
                         <p className={'item-name'}>{item.name}</p>
                         <p className={'item-type'}>{item.type}</p>
-                        <p className={'item-price'} >
-                            <img
-                                src={VbucksIcon}
-                                alt="Vbucks"
-                                style={{height: '13%', width: '13%'}}>
-                            </img>
+                        <p className={'item-price'}>
+                            <img src={VbucksIcon} alt="Vbucks" style={{ height: '12%', width: '12%' }} />
                             {item.price}
                         </p>
                     </div>
-                </li>
+                </a>
             ))}
         </ul>
     );
